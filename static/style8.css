@@ -1,0 +1,161 @@
+/* General Styles */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.sidebar .logo i {
+    color: #3498db;
+    margin-right: 10px;
+}
+
+.sidebar .logo .logo-text {
+    font-weight: bold;
+}
+
+.sidebar .nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar .nav ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar .nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .nav ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar .nav ul li a.active {
+    color: #3498db;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color: #fff;
+}
+
+.header .search-bar input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.header .search-bar .search-icon {
+    color: #3498db;
+    margin-left: 10px;
+}
+
+.header .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.header .user-info span {
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+/* Attendance Form */
+.attendance-form {
+    margin-top: 20px;
+}
+
+.attendance-form .form-box {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-form .form-box h1 {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.attendance-form .form-group {
+    margin-bottom: 15px;
+}
+
+.attendance-form .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.attendance-form .form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.attendance-form .primary-btn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.attendance-form .primary-btn:hover {
+    background-color: #2980b9;
+}
+

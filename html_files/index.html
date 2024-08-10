@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style1.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span class="logo-text">sneat</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="accounts.html"><i class="fas fa-user-cog"></i> Account Settings</a></li>
+                    <hr>
+                    <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                    <li><a href="register_user.html"><i class="fas fa-user-plus"></i> Create User</a></li>
+                    <li><a href="error.html"><i class="fas fa-exclamation-triangle"></i> Error</a></li>
+                    <hr>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="user-info">
+                    <span>Congratulations John!</span>
+                    <button class="btn-primary">View Badges</button>
+                </div>
+            </header>
+            <hr>
+            <!-- Attendance Table -->
+            <section class="attendance-section">
+                <h2>Worker Attendance</h2>
+                <div class="table-responsive">
+                    <table class="attendance-table">
+                        <thead>
+                            <tr>
+                                <th>Worker ID</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>101</td>
+                                <td>Jane Doe</td>
+                                <td>2024-08-08</td>
+                                <td><span class="badge present">Present</span></td>
+                            </tr>
+                            <tr>
+                                <td>102</td>
+                                <td>John Smith</td>
+                                <td>2024-08-08</td>
+                                <td><span class="badge absent">Absent</span></td>
+                            </tr>
+                            <tr>
+                                <td>103</td>
+                                <td>Emily Johnson</td>
+                                <td>2024-08-08</td>
+                                <td><span class="badge present">Present</span></td>
+                            </tr>
+                            <tr>
+                                <td>104</td>
+                                <td>Michael Brown</td>
+                                <td>2024-08-08</td>
+                                <td><span class="badge present">Present</span></td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

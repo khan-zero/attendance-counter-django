@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Arrival</title>
+    <link rel="stylesheet" href="{% static 'style2.css' %}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span class="logo-text">Our Factory</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="{% url 'dash' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="{% url 'accounts' %}"><i class="fas fa-user-cog"></i> Account Settings</a></li>
+                    <hr>
+                    <li><a href="{% url 'attendance_create' %}" class="active"><i class="fas fa-user-edit"></i> Attendance Create</a></li>
+                    <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                    <hr>
+                    <li><a href="{% url 'register_staff' %}"><i class="fas fa-user-plus"></i> Create User</a></li>
+                    <li><a href="{% url 'list' %}"><i class="fas fa-address-card"></i> List User</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="user-info">
+                    <span>Welcome {{ user.user_name }}!</span>
+                </div>
+            </header>
+            <hr>
+
+                <form action="{% url 'attendance_create' %}" method="POST" id="attendanceForm">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="worker-id">Worker ID:</label>
+                        <input type="text" id="worker-id" name="staff" required placeholder="Enter Worker ID">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="worker-name">Worker Name:</label>
+                        <input type="text" id="worker-name" name="full_name" required placeholder="Enter Worker Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="attendance-date">Date:</label>
+                        <input type="date" id="attendance-date" name="attendance_date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="attendance-status">Absent or Present:</label>
+                        <select id="attendance-status" name="attendance_status" required>
+                            <option value="">Select Status</option>
+                            <option value="True">Present</option>
+                            <option value="False">Absent</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="primary-btn">Submit</button>
+                </form>
+
+        </main>
+    </div>
+
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+
+</html>
+

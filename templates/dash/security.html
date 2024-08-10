@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Settings</title>
+    <link rel="stylesheet" href="{% static 'style2.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span class="logo-text">Our Factory</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="{% url 'dash' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="{% url 'accounts' %}" class="active"><i class="fas fa-user-cog"></i> Account Settings</a></li>
+                    <hr>
+                    <li><a href="{% url 'attendance_create' %}"><i class="fas fa-user-edit"></i> Attendance Create</a></li>
+                    <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                    <hr>
+                    <li><a href="{% url 'register_staff' %}"><i class="fas fa-user-plus"></i> Create User</a></li>
+                    <li><a href="{% url 'list' %}"><i class="fas fa-address-card"></i> List User</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="user-info">
+                    <button class="notifications">
+                        <i class="fas fa-user">{{ user.username }}</i>
+                    </button>
+                </div>
+            </header>
+
+            <section class="tabs">
+                <a href="{% url 'accounts' %}" class="button2">Account Center</a>
+                <a href="{% url 'security' %}" class="button2 active-tab">Security</a>
+            </section>
+
+            <section class="settings-section">
+                <h2>Change Password</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="current-password">Current Password</label>
+                        <input type="password" id="current-password" placeholder="Enter current password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" placeholder="Enter new password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm New Password</label>
+                        <input type="password" id="confirm-password" placeholder="Confirm new password" required>
+                    </div>
+                    <button type="submit" class="primary-btn">Change Password</button>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

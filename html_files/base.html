@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">sneat</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Dashboard</a></li>
+                    <li><a href="accaunts.html">Account Settings</a></li>
+                    <hr>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Create user</a></li>
+                    <li><a href="error.html">Error</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="main-content">
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-info">
+                    <span>Congratulations John!</span>
+                    <button>View Badges</button>
+                </div>
+            </header>
+            
+            <section class="cards">
+                <div class="card">
+                    <h3>Profit</h3>
+                    <p>$12,628</p>
+                    <span class="growth positive">+72.8%</span>
+                </div>
+                <div class="card">
+                    <h3>Sales</h3>
+                    <p>$4,679</p>
+                    <span class="growth positive">+28.42%</span>
+                </div>
+                <div class="card">
+                    <h3>Payments</h3>
+                    <p>$2,468</p>
+                    <span class="growth negative">-14.82%</span>
+                </div>
+                <div class="card">
+                    <h3>Transactions</h3>
+                    <p>$14,857</p>
+                    <span class="growth positive">+28.14%</span>
+                </div>
+            </section>
+            
+            <section class="charts">
+                <div class="chart">
+                    <h3>Total Revenue</h3>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <div class="chart">
+                    <h3>Profile Report</h3>
+                    <canvas id="profileChart"></canvas>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
+

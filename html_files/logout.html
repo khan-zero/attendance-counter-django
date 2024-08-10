@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout Confirmation</title>
+    <link rel="stylesheet" href="style5.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="logout-container">
+        <div class="logout-box">
+            <i class="fas fa-sign-out-alt fa-3x"></i>
+            <h1>Log Out Confirmation</h1>
+            <p>Are you sure you want to log out? Your session will end, and you'll need to sign back in to access your account.</p>
+            <div class="logout-buttons">
+                <button class="primary-btn" onclick="confirmLogout()">Logout</button>
+                <button class="secondary-btn" onclick="cancelLogout()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function confirmLogout() {
+            // Logic to log out the user
+            // Redirect to the login page after logout
+            window.location.href = "login.html"; // Replace with your login page
+        }
+
+        function cancelLogout() {
+            // Logic to cancel the logout
+            // Redirect back to the dashboard or previous page
+            window.location.href = "index.html"; // Replace with your dashboard or previous page
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span class="logo-text">Our Factory</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="{% url 'dash' %}"<i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="{% url 'accounts' %}"><i class="fas fa-user-cog"></i> Account Settings</a></li>
+                    <hr>
+                    <li><a href="{% url 'attendance_create' %}"><i class="fas fa-user-edit"></i> Attendance Create</a></li>
+                    <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                    <hr>
+                    <li><a href="{% url 'register_staff' %}"><i class="fas fa-user-plus"></i> Create User</a></li>
+                    <li><a href="{% url 'list' %}"><i class="fas fa-address-card"></i> List User</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="user-info">
+                    <span>Congratulations {{ user.user_name }}!</span>
+                </div>
+            </header>
+            <hr>
+            <h1>Edit Attendance for {{ attendance.staff.full_name }}</h1>
+                <form action="{% url 'attendance_create' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }} <!-- Render form fields with labels and inputs -->
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+
+        </main>
+    </div>
+
+    <!-- Add Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+
+</html>
+

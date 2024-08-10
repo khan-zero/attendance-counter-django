@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+    <link rel="stylesheet" href="style6.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">sneat</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="accaunts.html"><i class="fas fa-user"></i> Account Settings</a></li>
+                    <li><a href="security.html"><i class="fas fa-lock"></i> Security Settings</a></li>
+                    <li><a href="create_user.html" class="active"><i class="fas fa-user-plus"></i> Create User</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-info">
+                    <button class="notifications">
+                        <span>🔔</span>
+                    </button>
+                    <button class="user-avatar">
+                        <img src="avatar.png" alt="User Avatar">
+                    </button>
+                </div>
+            </header>
+
+            <section class="form-section">
+                <div class="form-box">
+                    <h1>Create New User</h1>
+                    <form action="create_user_process.php" method="POST" id="createUserForm">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" required placeholder="Enter username">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required placeholder="Enter password">
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <select id="role" name="role" required>
+                                <option value="user">User</option>
+                                <option value="staff">Staff</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="primary-btn">Create User</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('createUserForm').addEventListener('submit', function (event) {
+            // Basic form validation or AJAX submission logic can be added here
+            alert('User created successfully!');
+            // Prevent the default form submission if you want to handle it via JavaScript
+            // event.preventDefault();
+        });
+    </script>
+</body>
+
+</html>
+

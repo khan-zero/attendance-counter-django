@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+
+    <link rel="stylesheet" href="{% static 'style2.css' %}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span class="logo-text">Our Factory</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="{% url 'dash' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="{% url 'accounts' %}"><i class="fas fa-user-cog"></i> Account Settings</a></li>
+                    <hr>
+                    <li><a href="{% url 'attendance_create' %}"><i class="fas fa-user-edit"></i> Attendance Create</a></li>
+                    <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                    <hr>
+                    <li><a href="{% url 'register_staff' %}"><i class="fas fa-user-plus"></i> Create User</a></li>
+                    <li><a href="{% url 'list' %}"><i class="fas fa-address-card"></i> List User</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="user-info">
+                    <button class="notifications">
+                        <i class="fas fa-user">{{ user.username }}</i>
+                    </button>
+                </div>
+            </header>
+
+
+            <section class="form-section">
+                <div class="form-box">
+                    <h1>Create New User</h1>
+                    <form method="POST" enctype="multipart/form-data" id="createUserForm">
+                        {% csrf_token %}
+                            <div class="form-group">
+                                {{ form.full_name.label_tag }}
+                                {{ form.full_name }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.user_name.label_tag }}
+                                {{ form.user_name }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.email.label_tag }}
+                                {{ form.email }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.organization.label_tag }}
+                                {{ form.organization }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.ph_number.label_tag }}
+                                {{ form.ph_number }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.address.label_tag }}
+                                {{ form.address }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.region.label_tag }}
+                                {{ form.region }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.country.label_tag }}
+                                {{ form.country }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.profile_pic.label_tag }}
+                                {{ form.profile_pic }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.super_staff.label_tag }}
+                                {{ form.super_staff }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.login_password.label_tag }}
+                                {{ form.login_password }}
+                            </div>
+                            <button type="submit" class="primary-btn">Create Staff</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

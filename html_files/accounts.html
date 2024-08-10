@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="style2.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span class="logo-text">sneat</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#" class="active"><i class="fas fa-user-cog"></i> Account Settings</a></li>
+                    <hr>
+                    <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                    <li><a href="register_user.html"><i class="fas fa-user-plus"></i> Create User</a></li>
+                    <li><a href="error.html"><i class="fas fa-exclamation-triangle"></i> Error</a></li>
+                    <hr>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="user-info">
+                    <button class="notifications">
+                        <i class="fas fa-user">Tojimat</i>
+                    </button>
+                    <button class="user-avatar">
+                        <img src="linus.jpg" alt="User Avatar">
+                    </button>
+                </div>
+            </header>
+
+            <section class="tabs">
+                <a href="accounts.html" class="button1 active-tab">Account Center</a>
+                <a href="security.html" class="button2">Security</a>
+            </section>
+
+            <section class="account-details">
+                <form class="profile-form">
+                    <div class="profile-pic">
+                        <img src="linus.jpg" alt="User Profile" class="profile-image">
+                        <div class="profile-buttons">
+                            <button type="button" class="btn upload-btn">Upload New Photo</button>
+                            <button type="reset" class="btn reset-btn">Reset</button>
+                            <button type="submit" class="btn update-btn">Update</button>
+                        </div>
+                    </div>
+                    <p>Allowed JPG, GIF, or PNG. Max size of 800K</p>
+                </form>
+                <form class="details-form">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" value="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" value="Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" value="johnDoe@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="organization">Organization</label>
+                        <input type="text" id="organization" value="ThemeSelection" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" value="+1 (917) 543-9876" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" value="123 Main St, New York, NY 10001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" id="state" value="New York" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip-code">Davlat</label>
+                        <input type="text" id="zip-code" value="10001" required>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
